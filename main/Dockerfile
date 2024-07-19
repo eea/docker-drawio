@@ -1,5 +1,6 @@
 FROM openjdk:11-jdk-slim AS build
 
+ARG VERSION=v24.7.1
 
 RUN apt-get update -y && \
 # this solves some weird issue with openjdk-11-jdk-headless
@@ -12,7 +13,7 @@ RUN apt-get update -y && \
 COPY embed2js.patch /tmp/
 
 RUN cd /tmp && \
-    git clone --depth 1 https://github.com/jgraph/drawio.git && \
+    git clone -b $VERSION https://github.com/jgraph/drawio.git && \
     cd /tmp/drawio && \
     mv /tmp/embed2js.patch . && \
     patch -p1 < embed2js.patch && \
