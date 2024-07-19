@@ -9,7 +9,7 @@ RUN apt-get update -y && \
         ant \
         git
 
-COPY files/embed2js.patch /tmp/
+COPY embed2js.patch /tmp/
 
 RUN cd /tmp && \
     git clone --depth 1 https://github.com/jgraph/drawio.git && \
