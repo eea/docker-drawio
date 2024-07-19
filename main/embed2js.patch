@@ -1,0 +1,32 @@
+diff --git a/src/main/java/com/mxgraph/online/EmbedServlet2.java b/src/main/java/com/mxgraph/online/EmbedServlet2.java
+index e390c40..a1db72d 100644
+--- a/src/main/java/com/mxgraph/online/EmbedServlet2.java
++++ b/src/main/java/com/mxgraph/online/EmbedServlet2.java
+@@ -42,7 +42,7 @@ import javax.servlet.http.HttpServletResponse;
+ 
+ import org.apache.commons.text.StringEscapeUtils;
+ 
+-import com.google.appengine.api.utils.SystemProperty;
++//import com.google.appengine.api.utils.SystemProperty;
+ 
+ import com.mxgraph.online.Utils.SizeLimitExceededException;
+ 
+@@ -88,7 +88,7 @@ public class EmbedServlet2 extends HttpServlet
+ 	{
+ 		if (lastModified == null)
+ 		{
+-			// Uses deployment date as lastModified header
++			/*// Uses deployment date as lastModified header
+ 			String applicationVersion = SystemProperty.applicationVersion.get();
+ 			Date uploadDate = new Date(Long
+ 					.parseLong(applicationVersion
+@@ -97,7 +97,8 @@ public class EmbedServlet2 extends HttpServlet
+ 
+ 			DateFormat httpDateFormat = new SimpleDateFormat(
+ 					"EEE, dd MMM yyyy HH:mm:ss z", Locale.US);
+-			lastModified = httpDateFormat.format(uploadDate);
++			lastModified = httpDateFormat.format(uploadDate);*/
++			lastModified = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.US).format(new Date());
+ 		}
+ 
+ 		initLibraries(libraries);
