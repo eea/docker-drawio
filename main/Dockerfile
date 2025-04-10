@@ -1,6 +1,6 @@
 FROM openjdk:11-jdk-slim AS build
 
-ARG VERSION=v26.0.9
+ARG VERSION=v26.2.8
 
 RUN apt-get update -y && \
 # this solves some weird issue with openjdk-11-jdk-headless
